@@ -2,13 +2,12 @@
 import Image from "next/image";
 import ButtonLead from "./ButtonLead";
 import { animate, motion, useMotionValue } from "framer-motion";
-
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 
 const Hero = () => {
 	const [items, setItems] = useState([
-		"htt	ps://images.unsplash.com/photo-1581579439002-e29ac578f8d4?q=80&w=2587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		"https://images.unsplash.com/photo-1581579439002-e29ac578f8d4?q=80&w=2587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		"https://images.unsplash.com/photo-1583729259394-0315fc9e3338?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		"https://images.unsplash.com/photo-1637080146000-4c0673b1bb71?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 	]);
@@ -24,14 +23,17 @@ const Hero = () => {
 	]);
 
 	let [ref, { height }] = useMeasure();
-	const yTranslation = useMotionValue(0);
+	const yTranslation1 = useMotionValue(0);
+	const yTranslation2 = useMotionValue(0);
+	const yTranslation3 = useMotionValue(0);
 
 	useEffect(() => {
-		let controls;
-		let finalPosition = -height / 2 - 8;
+		let controls1, controls2, controls3;
+		let finalPosition1 = -height / 2 - 8;
+		let finalPosition2 = height / 2 + 8;
 		let startPosition = 0;
 
-		controls = animate(yTranslation, [startPosition, finalPosition], {
+		controls1 = animate(yTranslation1, [startPosition, finalPosition1], {
 			ease: "linear",
 			duration: 25,
 			repeat: Infinity,
@@ -39,24 +41,46 @@ const Hero = () => {
 			repeatDelay: 0,
 		});
 
-		return controls.stop;
-	}, [height, yTranslation]);
+		controls2 = animate(yTranslation2, [startPosition, finalPosition2], {
+			ease: "linear",
+			duration: 25,
+			repeat: Infinity,
+			repeatType: "loop",
+			repeatDelay: 0,
+		});
+
+		controls3 = animate(yTranslation3, [startPosition, finalPosition1], {
+			ease: "linear",
+			duration: 25,
+			repeat: Infinity,
+			repeatType: "loop",
+			repeatDelay: 0,
+		});
+
+		return () => {
+			controls1.stop();
+			controls2.stop();
+			controls3.stop();
+		};
+	}, [height, yTranslation1, yTranslation2, yTranslation3]);
 
 	return (
-		<section className="flex flex-col h-screen ">
-			<div className="absolute -z-10 -left-100 -right-20 -top-10 -bottom-10 rotate-12 h-full gap-2 overflow-hidden ">
+		<section className="flex flex-col h-screen">
+			<div className="absolute -z-10 -left-100 -right-20 -top-10 -bottom-10 rotate-12 h-full gap-2 overflow-hidden">
 				<motion.div
 					className="relative"
 					ref={ref}
-					style={{ y: yTranslation }}
+					style={{ y: yTranslation3 }}
 				>
-					{[...thirdItems, ...thirdItems].map((item, index) => (
+					{[
+						...thirdItems.slice().reverse(),
+						...thirdItems.slice().reverse(),
+					].map((item, index) => (
 						<motion.div
 							key={index}
 							className="w-[231px] h-[391px] mb-2 rounded-xl relative overflow-hidden"
 						>
 							<Image
-								// src={heroImg}
 								src={item}
 								alt="Product Demo"
 								className="rounded-xl"
@@ -68,49 +92,52 @@ const Hero = () => {
 					))}
 				</motion.div>
 			</div>
-			<div className="absolute -z-10 -left-100 -right-20 -top-10 -bottom-10 -translate-x-64  rotate-12 h-full gap-2 overflow-hidden ">
+			<div className="absolute -z-10 -left-100 -right-20 -top-10 -bottom-10 -translate-x-64 rotate-12 h-full gap-2 overflow-hidden">
 				<motion.div
 					className="relative"
 					ref={ref}
-					style={{ y: yTranslation }}
+					style={{ y: yTranslation2 }}
 				>
-					{[...items, ...items].map((item, index) => (
-						<motion.div
-							key={index}
-							className="w-[231px] h-[391px] mb-2 rounded-xl relative overflow-hidden"
-						>
-							<Image
-								// src={heroImg}
-								src={item}
-								alt="Product Demo"
-								className="rounded-xl"
-								priority={true}
-								fill={true}
-								style={{ objectFit: "cover" }}
-							/>
-						</motion.div>
-					))}
+					{[...items.slice().reverse(), ...items.slice().reverse()].map(
+						(item, index) => (
+							<motion.div
+								key={index}
+								className="w-[231px] h-[391px] mb-2 rounded-xl relative overflow-hidden"
+							>
+								<Image
+									src={item}
+									alt="Product Demo"
+									className="rounded-xl"
+									priority={true}
+									fill={true}
+									style={{ objectFit: "cover" }}
+								/>
+							</motion.div>
+						)
+					)}
 				</motion.div>
 			</div>
-			<div className="absolute -z-10 -left-100 -right-20 -top-10 -bottom-10 -translate-x-[514px]  rotate-12 h-full gap-2 overflow-hidden ">
+			<div className="absolute -z-10 -left-100 -right-20 -top-10 -bottom-10 -translate-x-[514px] rotate-12 h-full gap-2 overflow-hidden">
 				<motion.div
 					className="relative"
 					ref={ref}
-					style={{ y: yTranslation }}
+					style={{ y: yTranslation1 }}
 				>
-					{[...secondItems, ...secondItems].map((item, index) => (
+					{[
+						...secondItems.slice().reverse(),
+						...secondItems.slice().reverse(),
+					].map((item, index) => (
 						<motion.div
 							key={index}
 							className="w-[231px] h-[391px] mb-2 rounded-xl relative overflow-hidden"
 						>
 							<Image
-								// src={heroImg}
 								src={item}
 								alt="Product Demo"
 								className="rounded-xl"
-								priority={true}
-								fill={true}
 								style={{ objectFit: "cover" }}
+								fill={true}
+								priority={true}
 							/>
 						</motion.div>
 					))}
