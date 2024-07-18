@@ -8,17 +8,17 @@ import useMeasure from "react-use-measure";
 const Hero = () => {
 	const [items, setItems] = useState([
 		"/app/assets/Frame_7.png",
-		"/app/assets/Frame_12",
-		"/app/assets/Frame_13",
+		"/app/assets/Frame_12.png",
+		"/app/assets/Frame_13.png",
 	]);
 	const [secondItems, setSecondItems] = useState([
 		"/app/assets/Image_26.png",
-		"/app/assets/Image_37",
+		"/app/assets/Image_37.png",
 		"https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 	]);
 	const [thirdItems, setThirdItems] = useState([
-		"/app/assets/Image_29",
-		"/app/assets/Image_28",
+		"/app/assets/Image_29.png",
+		"/app/assets/Image_28.png",
 		"https://images.unsplash.com/photo-1606584178861-09b1d9149487?q=80&w=2427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 	]);
 
