@@ -4,24 +4,21 @@ import ButtonLead from "./ButtonLead";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
-import Frame7 from "@/app/assets/Frame_7.png";
-import Frame12 from "@/app/assets/Frame_12.png";
-import Frame13 from "@/app/assets/Frame_13.png";
-import Image26 from "@/app/assets/Image_26.png";
-import Image37 from "@/app/assets/Image_37.png";
-import Image29 from "@/app/assets/Image_29.png";
-import Image28 from "@/app/assets/Image_28.png";
 
 const Hero = () => {
-	const [items, setItems] = useState([Frame7, Frame12, Frame13]);
+	const [items, setItems] = useState([
+		"/app/assets/Frame_7.png",
+		"/app/assets/Frame_12",
+		"/app/assets/Frame_13",
+	]);
 	const [secondItems, setSecondItems] = useState([
-		Image26,
-		Image37,
+		"/app/assets/Image_26.png",
+		"/app/assets/Image_37",
 		"https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 	]);
 	const [thirdItems, setThirdItems] = useState([
-		Image29,
-		Image28,
+		"/app/assets/Image_29",
+		"/app/assets/Image_28",
 		"https://images.unsplash.com/photo-1606584178861-09b1d9149487?q=80&w=2427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 	]);
 
