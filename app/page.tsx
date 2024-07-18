@@ -10,19 +10,15 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
 	return (
-		<>
-			<Suspense>
-				<Header />
-			</Suspense>
-			<main>
-				<Hero />
-				{/* <Problem />
-				<FeaturesAccordion />
-				<Pricing />
-				<FAQ />
-				<CTA /> */}
-			</main>
-			{/* <Footer /> */}
-		</>
+		<div className="flex justify-center">
+			<div className="w-full 2xl:max-w-7xl overflow-hidden relative ">
+				<Suspense>
+					<Header />
+				</Suspense>
+				<main className="overflow-hidden">
+					<Hero />
+				</main>
+			</div>
+		</div>
 	);
 }

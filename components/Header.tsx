@@ -8,6 +8,7 @@ import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/anana.png";
 import config from "@/config";
+import { AnanaLogo } from "./svgs/logos";
 
 const links: {
 	href: string;
@@ -53,15 +54,7 @@ const Header = () => {
 						href="/"
 						title={`${config.appName} homepage`}
 					>
-						<Image
-							src={logo}
-							alt={`${config.appName} logo`}
-							// className="w-8"
-							placeholder="blur"
-							priority={true}
-							width={104}
-							height={64}
-						/>
+						<AnanaLogo />
 						{/* <span className="font-extrabold text-lg">
               {config.appName}
             </span> */}
@@ -158,27 +151,6 @@ const Header = () => {
 								/>
 							</svg>
 						</button>
-					</div>
-
-					{/* Your links on small screens */}
-					<div className="flow-root mt-6">
-						<div className="py-4">
-							<div className="flex flex-col gap-y-4 items-start">
-								{links.map((link) => (
-									<Link
-										href={link.href}
-										key={link.href}
-										className="link link-hover"
-										title={link.label}
-									>
-										{link.label}
-									</Link>
-								))}
-							</div>
-						</div>
-						<div className="divider"></div>
-						{/* Your CTA on small screens */}
-						<div className="flex flex-col">{cta}</div>
 					</div>
 				</div>
 			</div>
