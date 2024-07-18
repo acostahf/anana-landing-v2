@@ -3,10 +3,9 @@ import { ConfigProps } from "./types/config";
 
 const config = {
 	// REQUIRED
-	appName: "Anana",
+	appName: "anana",
 	// REQUIRED: a short description of your app for SEO tags (can be overwritten)
-	appDescription:
-		"The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+	appDescription: "A full life, taught by the past ",
 	// REQUIRED (no https://, not trialing slash at the end, just the naked domain)
 	domainName: "anana",
 	crisp: {
@@ -75,13 +74,13 @@ const config = {
 		// subdomain to use when sending emails, if you don't have a subdomain, just remove it. Highly recommended to have one (i.e. mg.yourdomain.com or mail.yourdomain.com)
 		subdomain: "mg",
 		// REQUIRED — Email 'From' field to be used when sending magic login links
-		fromNoReply: `ShipFast <noreply@mg.shipfa.st>`,
+		fromNoReply: `anana <noreply@mg.anana.us>`,
 		// REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-		fromAdmin: `Marc at ShipFast <marc@mg.shipfa.st>`,
+		fromAdmin: `Teo at anana <teo@mg.anana.us>`,
 		// Email shown to customer if need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
-		supportEmail: "marc@mg.shipfa.st",
+		supportEmail: "teo@mg.anana.us",
 		// When someone replies to supportEmail sent by the app, forward it to the email below (otherwise it's lost). If you set supportEmail to empty, this will be ignored.
-		forwardRepliesTo: "marc.louvion@gmail.com",
+		forwardRepliesTo: "teomefa@gmail.com",
 	},
 	colors: {
 		// REQUIRED — The DaisyUI theme to use (added to the main layout.js). Leave blank for default (light & dark mode). If you any other theme than light/dark, you need to add it in config.tailwind.js in daisyui.themes.
