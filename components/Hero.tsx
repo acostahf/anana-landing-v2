@@ -88,6 +88,7 @@ const Hero = () => {
 								fill={true}
 								style={{ objectFit: "cover" }}
 								fetchPriority="high"
+								blurDataURL={item}
 							/>
 						</motion.div>
 					))}
