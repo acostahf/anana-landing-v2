@@ -14,12 +14,12 @@ const Hero = () => {
 	const [secondItems, setSecondItems] = useState([
 		"/assets/image_26.png",
 		"/assets/image_37.png",
-		"https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		"/assets/image_1.jpg",
 	]);
 	const [thirdItems, setThirdItems] = useState([
 		"/assets/image_29.png",
 		"/assets/image_28.png",
-		"https://images.unsplash.com/photo-1606584178861-09b1d9149487?q=80&w=2427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		"/assets/image_2.jpg",
 	]);
 
 	let [ref, { height }] = useMeasure();
