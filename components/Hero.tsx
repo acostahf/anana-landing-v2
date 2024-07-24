@@ -149,9 +149,10 @@ const Hero = () => {
 						Get notified when <br />
 						we launch!
 					</h1>
-					<p className="text-[16px] opacity-80 leading-relaxed pb-[20px] text[#475467]">
-						Drop us your email and we will keep you <br /> updated about
-						our project.
+					<p className="text-[16px] opacity-80 leading-relaxed pb-[20px] max-w-sm lg:max-w-md text[#475467]">
+						anana is a culinary platform that bridges the world through
+						food. Specializing in generational recipes, our chefs are
+						trained by life itself.
 					</p>
 					<ButtonLead />
 					<div className="pt-[20px]">

@@ -5,9 +5,10 @@ const config = {
 	// REQUIRED
 	appName: "anana",
 	// REQUIRED: a short description of your app for SEO tags (can be overwritten)
-	appDescription: "A full life, taught by the past ",
+	appDescription:
+		"anana is a culinary platform that bridges the world through food. Specializing in generational recipes, our chefs are trained by life itself.",
 	// REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-	domainName: "anana-landing.vercel.app",
+	domainName: "anana.us",
 	crisp: {
 		// Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
 		id: "",

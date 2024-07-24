@@ -91,13 +91,13 @@ export const renderSchemaTags = () => {
 						"@type": "Person",
 						name: "Teo",
 					},
-					datePublished: "2023-08-01",
+					datePublished: "2023-07-23",
 					applicationCategory: "EducationalApplication",
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.8",
-						ratingCount: "12",
-					},
+					// aggregateRating: {
+					// 	"@type": "AggregateRating",
+					// 	ratingValue: "4.8",
+					// 	ratingCount: "12",
+					// },
 					offers: [
 						{
 							"@type": "Offer",
