@@ -1,3 +1,4 @@
+//@ts-ignore
 import Link from "next/link";
 import Image from "next/image";
 import { FooterLogo, Hand } from "./svgs/logos";
