@@ -1,4 +1,3 @@
-//@ts-ignore
 import Link from "next/link";
 import Image from "next/image";
 import { FooterLogo, Hand } from "./svgs/logos";
@@ -7,6 +6,7 @@ import { InstaGram, Linkedin, TikTok, Youtube } from "./svgs/Icons";
 type LinkSection = {
     href: string;
     label: string;
+    //@ts-ignore-next-line
     icon?: JSX.Element;
 };
 
