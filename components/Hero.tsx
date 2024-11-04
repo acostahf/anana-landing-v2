@@ -17,9 +17,9 @@ const Hero = () => {
                 style={{
                     objectFit: "cover",
                 }}
-                className="absolute inset-0 z-[-1]"
+                className="absolute inset-0 z-10"
             />
-            <div className="flex flex-col justify-start items-center w-full md:w-[891px] gap-6 md:gap-12 p-4">
+            <div className="flex flex-col justify-start items-center w-full md:w-[891px] gap-6 md:gap-12 p-4 z-40">
                 <div className="flex flex-col justify-start items-center relative gap-4 md:gap-6">
                     <AnanaLogo />
                     <p className="flex-grow-0 flex-shrink-0 w-full md:w-[753px] text-4xl md:text-8xl text-center text-[#fffcf9]">
