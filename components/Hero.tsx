@@ -31,7 +31,7 @@ const Hero = () => {
                     </p>
                     <p className="w-full md:max-w-[891px] text-base md:text-xl text-center text-wrap text-white">
                         Cooking taught by real nonni. Learn authentic,
-                        cherished recipes straight from grandparents'
+                        cherished recipes straight from grandparents&apos;
                         kitchens. Join the 423 people who&apos;ve signed up
                         and bring tradition to your table.
                     </p>
