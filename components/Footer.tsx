@@ -3,8 +3,20 @@ import Image from "next/image";
 import { FooterLogo, Hand } from "./svgs/logos";
 import { InstaGram, Linkedin, TikTok, Youtube } from "./svgs/Icons";
 
+type LinkSection = {
+    href: string;
+    label: string;
+    icon?: JSX.Element;
+};
+
+type Links = {
+    company: LinkSection[];
+    support: LinkSection[];
+    socials: LinkSection[];
+};
+
 const Footer = () => {
-    const links = {
+    const links: Links = {
         company: [
             { href: "/about", label: "About Us" },
             { href: "/team", label: "The Team" },
@@ -54,56 +66,64 @@ const Footer = () => {
 
                 {/* Links Sections */}
                 <div className="flex flex-col md:flex-row gap-8 lg:gap-20">
-                    {["company", "support", "socials"].map((section) => (
-                        <div
-                            key={section}
-                            className="hidden md:flex flex-col gap-4"
-                        >
-                            <p className="text-md lg:text-xl font-semibold text-[#1d1128] capitalize">
-                                {section}
-                            </p>
-                            <div className="flex flex-col gap-2">
-                                {links[section].map((link) => (
-                                    <div
-                                        key={link.href}
-                                        // href={link.href}
-                                        // passHref
-                                    >
-                                        <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
-                                            {link.icon && link.icon}
-                                            {link.label}
-                                        </a>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-
-                    <div className="flex md:hidden flex-row gap-8">
-                        {["company", "support"].map((section) => (
+                    {["company", "support", "socials"].map(
+                        (section: keyof Links) => (
                             <div
                                 key={section}
-                                className="flex  flex-col gap-4"
+                                className="hidden md:flex flex-col gap-4"
                             >
                                 <p className="text-md lg:text-xl font-semibold text-[#1d1128] capitalize">
                                     {section}
                                 </p>
                                 <div className="flex flex-col gap-2">
-                                    {links[section].map((link) => (
-                                        <div
-                                            key={link.href}
-                                            // href={link.href}
-                                            // passHref
-                                        >
-                                            <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
-                                                {link.icon && link.icon}
-                                                {link.label}
-                                            </a>
-                                        </div>
-                                    ))}
+                                    {links[section as keyof Links].map(
+                                        (link) => (
+                                            <div
+                                                key={link.href}
+                                                // href={link.href}
+                                                // passHref
+                                            >
+                                                <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
+                                                    {link.icon &&
+                                                        link.icon}
+                                                    {link.label}
+                                                </a>
+                                            </div>
+                                        )
+                                    )}
                                 </div>
                             </div>
-                        ))}
+                        )
+                    )}
+
+                    <div className="flex md:hidden flex-row gap-8">
+                        {["company", "support"].map(
+                            (section: keyof Links) => (
+                                <div
+                                    key={section}
+                                    className="flex  flex-col gap-4"
+                                >
+                                    <p className="text-md lg:text-xl font-semibold text-[#1d1128] capitalize">
+                                        {section}
+                                    </p>
+                                    <div className="flex flex-col gap-2">
+                                        {links[section].map((link) => (
+                                            <div
+                                                key={link.href}
+                                                // href={link.href}
+                                                // passHref
+                                            >
+                                                <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
+                                                    {link.icon &&
+                                                        link.icon}
+                                                    {link.label}
+                                                </a>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )
+                        )}
                     </div>
 
                     {/* Contact Section */}
@@ -126,7 +146,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {["socials"].map((section) => (
+                    {["socials"].map((section: keyof Links) => (
                         <div
                             key={section}
                             className="flex md:hidden flex-col gap-4"
