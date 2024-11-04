@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FooterLogo, Hand } from "./svgs/logos";
+import { JSX } from "react";
 import { InstaGram, Linkedin, TikTok, Youtube } from "./svgs/Icons";
 
 type LinkSection = {
