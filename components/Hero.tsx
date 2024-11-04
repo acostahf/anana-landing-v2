@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import ButtonLead from "./ButtonLead";
 import { AnanaLogo } from "./svgs/logos";
