@@ -5,7 +5,7 @@ import { AnanaLogo } from "./svgs/logos";
 
 const Hero = () => {
     return (
-        <div className="w-full h-screen flex flex-col items-center justify-center md:flex-row bg-[#f6ede3]">
+        <div className="w-full h-screen flex flex-col items-center justify-center md:flex-row bg-[#f6ede3] relative">
             <Image
                 src="/assets/ananapreview-11.png"
                 alt="Hero"
