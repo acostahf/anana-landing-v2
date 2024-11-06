@@ -26,7 +26,7 @@ export const InstaGram = () => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+            className="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
             preserveAspectRatio="none"
         >
             <path
@@ -57,7 +57,7 @@ export const TikTok = () => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+            className="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
             preserveAspectRatio="none"
         >
             <path
@@ -76,7 +76,7 @@ export const Youtube = () => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+            className="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
             preserveAspectRatio="xMidYMid meet"
         >
             <g clipPath="url(#clip0_6155_3587)">
@@ -104,7 +104,7 @@ export const Linkedin = () => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+            className="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
             preserveAspectRatio="xMidYMid meet"
         >
             <g clipPath="url(#clip0_6155_3595)">

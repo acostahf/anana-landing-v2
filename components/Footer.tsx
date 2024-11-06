@@ -56,11 +56,10 @@ const Footer = () => {
         <footer className="bg-[#f6ede3] pb-4 pt-20 px-6 lg:px-20">
             <div className="max-w-7xl mx-auto flex flex-col flex-wrap md:flex-row md:justify-between gap-4 md:gap-20 items-start md:items-start">
                 {/* Logo and Tagline */}
-                <div className="flex items-center gap-4 mb-6 md:mb-0">
-                    <Hand />
-                    <div>
-                        <FooterLogo />
-                        <p className="text-lg text-[#1765fc]">
+                <div className="flex flex-col">
+                    <div className="w-[218px] h-[68px]">
+                        <Hand />
+                        <p className="text-lg text-[#1765fc] -mt-2 ml-12">
                             Recipes for <em>Life.</em>
                         </p>
                     </div>
@@ -138,11 +137,11 @@ const Footer = () => {
                         </p>
                         <div className="flex flex-row gap-4 items-center">
                             <div className="flex justify-start items-start flex-grow-0 flex-shrink-0 relative">
-                                <p className="flex-grow-0 flex-shrink-0 text-base text-center">
+                                <p className="text-base text-center bg-clip-text text-transparent bg-gradient-to-r from-[#7B00FF] to-[#D36E00]">
                                     Submit a nonna
                                 </p>
                             </div>
-                            <button className="bg-[#1765fc] text-white rounded-xl px-4 py-1 lg:py-2 text-sm font-medium">
+                            <button className="btn bg-[#1765fc] hover:bg-[#1451c7]/75 text-white rounded-xl px-4 py-1 lg:py-2 text-sm font-medium">
                                 Apply Now!
                             </button>
                         </div>

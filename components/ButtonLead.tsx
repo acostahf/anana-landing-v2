@@ -52,9 +52,9 @@ const ButtonLead = ({ extraStyle }: { extraStyle?: string }) => {
             />
 
             <button
-                className="relative min-w-[183px] px-8 py-2 rounded-2xl bg-[#1451c7] text-white"
+                className="btn relative border-none hover:bg-[#1451c7]/75 min-w-[183px] px-8 py-2 rounded-2xl bg-[#1451c7] text-white disabled:bg-[#1451c7]/75 disabled:text-white"
                 type="submit"
-                disabled={isDisabled}
+                disabled={isDisabled || isLoading}
             >
                 {isLoading ? (
                     <span className="loading loading-spinner loading-xs"></span>
