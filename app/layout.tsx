@@ -8,6 +8,7 @@ import config from "@/config";
 import "./globals.css";
 import localFont from "next/font/local";
 import { ReactQueryClientProvider } from "@/components/ReactQueryClientProvider";
+import Script from "next/script";
 
 const font = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -49,6 +50,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 </head>
             )}
             <body>
+                <Script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-K43JZQSH4H"
+                ></Script>
+                <Script id="gtag-init" strategy="afterInteractive">
+                    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K43JZQSH4H');
+    `}
+                </Script>
+
                 {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
                 <ReactQueryClientProvider>
                     <ClientLayout>{children}</ClientLayout>
