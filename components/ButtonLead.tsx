@@ -47,14 +47,23 @@ const ButtonLead = ({ extraStyle }: { extraStyle?: string }) => {
                 ref={inputRef}
                 autoComplete="email"
                 placeholder="Enter your email..."
-                className="px-4 py-3 md:p-0 rounded-2xl bg-[#1d1128]/75 border border-[#1451c7] md:flex-grow-0 flex-shrink-0 text-base text-center md:text-left text-white placeholder:opacity-60 md:bg-transparent md:border-none focus:outline-none"
+                className="font-lora px-4 py-3 md:p-0 rounded-2xl bg-[#1d1128]/75 border border-[#1451c7] md:flex-grow-0 flex-shrink-0 text-base text-center md:text-left text-white placeholder:opacity-60 md:bg-transparent md:border-none focus:outline-none"
                 onChange={(e) => setEmail(e.target.value)}
             />
 
             <button
-                className="btn relative border-none hover:bg-[#1451c7]/75 min-w-[183px] px-8 py-2 rounded-2xl bg-[#1451c7] text-white disabled:bg-[#1451c7]/75 disabled:text-white"
+                className="font-sans relative border-none hover:bg-[#1451c7]/75 min-w-[183px] px-8 py-2 rounded-2xl bg-[#1451c7] text-white disabled:bg-[#1451c7]/75 disabled:text-white transform transition-transform duration-150 ease-in-out"
                 type="submit"
                 disabled={isDisabled || isLoading}
+                onMouseDown={(e) =>
+                    (e.currentTarget.style.transform = "scale(0.95)")
+                }
+                onMouseUp={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")
+                }
+                onMouseLeave={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")
+                }
             >
                 {isLoading ? (
                     <span className="loading loading-spinner loading-xs"></span>

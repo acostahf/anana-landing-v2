@@ -59,8 +59,9 @@ const Footer = () => {
                 <div className="flex flex-col pb-10 md:pb-0">
                     <div className="w-[218px] h-[68px]">
                         <Hand />
-                        <p className="text-lg text-[#1765fc] -mt-2 ml-12">
-                            Recipes for <em>Life.</em>
+                        <p className="font-lora text-lg text-[#1765fc] -mt-2 ml-12">
+                            Recipes for{" "}
+                            <em className="font-semibold">Life.</em>
                         </p>
                     </div>
                 </div>
@@ -84,7 +85,7 @@ const Footer = () => {
                                                 // href={link.href}
                                                 // passHref
                                             >
-                                                <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
+                                                <a className="font-avenir text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
                                                     {link.icon &&
                                                         link.icon}
                                                     {link.label}
@@ -189,7 +190,7 @@ const Footer = () => {
                     />
                 </svg>
 
-                <p>
+                <p className="font-avenir">
                     Copyright &copy; 2024 Anana, All Rights Reserved |{" "}
                     {/* <Link href="/terms"> */}
                     <a className="text-[#1765fc]">Terms and Conditions</a>
