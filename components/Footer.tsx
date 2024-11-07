@@ -53,10 +53,10 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-[#f6ede3] pb-4 pt-20 px-6 lg:px-20">
-            <div className="max-w-7xl mx-auto flex flex-col flex-wrap md:flex-row md:justify-between gap-4 md:gap-20 items-start md:items-start">
+        <footer className="bg-[#f6ede3] pb-4 pt-20 lg:pt-36 px-6 lg:px-20 relative">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-4 md:gap-20 items-start md:items-start">
                 {/* Logo and Tagline */}
-                <div className="flex flex-col">
+                <div className="flex flex-col pb-10 md:pb-0">
                     <div className="w-[218px] h-[68px]">
                         <Hand />
                         <p className="text-lg text-[#1765fc] -mt-2 ml-12">
@@ -66,17 +66,17 @@ const Footer = () => {
                 </div>
 
                 {/* Links Sections */}
-                <div className="flex flex-col md:flex-row gap-8 lg:gap-20">
+                <div className="flex flex-col md:flex-row w-full justify-between lg:max-w-[780px] flex-wrap">
                     {["company", "support", "socials"].map(
                         (section: keyof Links) => (
                             <div
                                 key={section}
-                                className="hidden md:flex flex-col gap-4"
+                                className="hidden md:flex flex-col gap-4 lg:gap-10 pr-4"
                             >
                                 <p className="text-md lg:text-xl font-semibold text-[#1d1128] capitalize">
                                     {section}
                                 </p>
-                                <div className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-2 lg:gap-10">
                                     {links[section as keyof Links].map(
                                         (link) => (
                                             <div
@@ -97,7 +97,7 @@ const Footer = () => {
                         )
                     )}
 
-                    <div className="flex md:hidden flex-row gap-8">
+                    <div className="flex md:hidden flex-row gap-8 pb-10">
                         {["company", "support"].map(
                             (section: keyof Links) => (
                                 <div
@@ -128,7 +128,7 @@ const Footer = () => {
                     </div>
 
                     {/* Contact Section */}
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 lg:gap-10 pb-10 md:pb-0">
                         <p className="text-md lg:text-xl font-semibold text-[#1d1128]">
                             Contact Us
                         </p>
@@ -136,12 +136,12 @@ const Footer = () => {
                             hello@anana.us
                         </p>
                         <div className="flex flex-row gap-4 items-center">
-                            <div className="flex justify-start items-start flex-grow-0 flex-shrink-0 relative">
+                            <div className="flex justify-start items-start relative">
                                 <p className="text-base text-center bg-clip-text text-transparent bg-gradient-to-r from-[#7B00FF] to-[#D36E00]">
                                     Submit a nonna
                                 </p>
                             </div>
-                            <button className="btn bg-[#1765fc] hover:bg-[#1451c7]/75 text-white rounded-xl px-4 py-1 lg:py-2 text-sm font-medium">
+                            <button className="btn btn-xs md:btn-md bg-[#1765fc] hover:bg-[#1451c7]/75 text-white rounded-xl md:px-4 md:py-1 lg:py-2 text-sm font-medium">
                                 Apply Now!
                             </button>
                         </div>
@@ -170,7 +170,25 @@ const Footer = () => {
                 </div>
             </div>
             {/* Footer Bottom Section */}
-            <div className="border-t border-[#e0d0be] mt-10 pt-4 text-center text-sm text-[#1d1128]">
+            <div className="flex lg:flex-col justify-start items-start lg:justify-end lg:items-end md:gap-10 mt-10 pt-20  text-sm text-[#1d1128]">
+                <svg
+                    width={787}
+                    height={1}
+                    viewBox="0 0 787 1"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid meet"
+                    className="hidden lg:block"
+                >
+                    <line
+                        x1="-4.37114e-8"
+                        y1="0.5"
+                        x2={787}
+                        y2="0.499931"
+                        stroke="#E0D0BE"
+                    />
+                </svg>
+
                 <p>
                     Copyright &copy; 2024 Anana, All Rights Reserved |{" "}
                     {/* <Link href="/terms"> */}
@@ -179,6 +197,14 @@ const Footer = () => {
                     <a className="text-[#1765fc]">Privacy Policy</a>
                     {/* </Link> */}
                 </p>
+            </div>
+
+            <div className="hidden xl:block absolute w-[650px] h-[275px] left-0 bottom-0 ">
+                <Image
+                    src={"/assets/footer-png.png"}
+                    alt="footer img"
+                    fill
+                />
             </div>
         </footer>
     );
