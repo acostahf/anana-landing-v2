@@ -72,12 +72,12 @@ const Footer = () => {
                         (section: keyof Links) => (
                             <div
                                 key={section}
-                                className="hidden md:flex flex-col gap-4 lg:gap-10 pr-4"
+                                className="hidden md:flex flex-col gap-6 pr-4"
                             >
                                 <p className="text-md lg:text-xl font-semibold text-[#1d1128] capitalize">
                                     {section}
                                 </p>
-                                <div className="flex flex-col gap-2 lg:gap-10">
+                                <div className="flex flex-col gap-4">
                                     {links[section as keyof Links].map(
                                         (link) => (
                                             <div
@@ -98,17 +98,17 @@ const Footer = () => {
                         )
                     )}
 
-                    <div className="flex md:hidden flex-row gap-8 pb-10">
+                    <div className="flex md:hidden flex-row gap-6 pb-10">
                         {["company", "support"].map(
                             (section: keyof Links) => (
                                 <div
                                     key={section}
-                                    className="flex  flex-col gap-4"
+                                    className="flex  flex-col gap-6"
                                 >
                                     <p className="text-md lg:text-xl font-semibold text-[#1d1128] capitalize">
                                         {section}
                                     </p>
-                                    <div className="flex flex-col gap-2">
+                                    <div className="flex flex-col gap-4">
                                         {links[section].map((link) => (
                                             <div
                                                 key={link.href}
@@ -129,8 +129,8 @@ const Footer = () => {
                     </div>
 
                     {/* Contact Section */}
-                    <div className="flex flex-col gap-4 lg:gap-10 pb-10 md:pb-0">
-                        <p className="text-md lg:text-xl font-semibold text-[#1d1128]">
+                    <div className="flex flex-col gap-4 pb-10 md:pb-0">
+                        <p className="text-md lg:text-xl pb-2 font-semibold text-[#1d1128]">
                             Contact Us
                         </p>
                         <p className="text-sm lg:text-base text-[#1d1128]">
@@ -142,8 +142,8 @@ const Footer = () => {
                                     Submit a nonna
                                 </p>
                             </div>
-                            <button className="btn btn-xs md:btn-md bg-[#1765fc] hover:bg-[#1451c7]/75 text-white rounded-xl md:px-4 md:py-1 lg:py-2 text-sm font-medium">
-                                Apply Now!
+                            <button className="bg-[#1765fc] hover:bg-[#1451c7]/75 text-white rounded-xl py-1.5 px-4 text-xs md:text-sm font-sans">
+                                Apply now!
                             </button>
                         </div>
                     </div>
