@@ -3,6 +3,12 @@
 import React, { useState, useRef } from "react";
 import { toast } from "react-hot-toast";
 import apiClient from "@/libs/api";
+import {
+    QueryClient,
+    useMutation,
+    useQueryClient,
+} from "@tanstack/react-query";
+import { getQueryClient } from "@/libs/query";
 
 // This component is used to collect the emails from the landing page
 // You'd use this if your product isn't ready yet or you want to collect leads
@@ -13,25 +19,34 @@ const ButtonLead = ({ extraStyle }: { extraStyle?: string }) => {
     const [email, setEmail] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isDisabled, setIsDisabled] = useState<boolean>(false);
+    const queryClient = getQueryClient();
+
+    const mutation = useMutation({
+        mutationFn: ({ email }: { email: string }) => {
+            return apiClient.post("/lead", { email });
+        },
+        onMutate: () => {
+            setIsLoading(true);
+            setIsDisabled(true);
+        },
+        onSuccess: () => {
+            toast.success("Thanks for joining the waitlist!");
+            setEmail("");
+            setIsLoading(false);
+            setIsDisabled(true);
+            inputRef.current?.blur();
+            queryClient.invalidateQueries({ queryKey: ["leads"] });
+        },
+        onError: (error) => {
+            toast.error(error.message);
+            setIsLoading(false);
+            setIsDisabled(false);
+        },
+    });
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e?.preventDefault();
-
-        setIsLoading(true);
-        try {
-            await apiClient.post("/lead", { email });
-
-            toast.success("Thanks for joining the waitlist!");
-
-            // just remove the focus on the input
-            inputRef.current.blur();
-            setEmail("");
-            setIsDisabled(true);
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setIsLoading(false);
-        }
+        mutation.mutate({ email });
     };
     return (
         <form

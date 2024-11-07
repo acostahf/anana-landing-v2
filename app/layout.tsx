@@ -7,6 +7,7 @@ import ClientLayout from "@/components/LayoutClient";
 import config from "@/config";
 import "./globals.css";
 import localFont from "next/font/local";
+import { ReactQueryClientProvider } from "@/components/ReactQueryClientProvider";
 
 const font = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -49,7 +50,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             )}
             <body>
                 {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
-                <ClientLayout>{children}</ClientLayout>
+                <ReactQueryClientProvider>
+                    <ClientLayout>{children}</ClientLayout>
+                </ReactQueryClientProvider>
             </body>
         </html>
     );
