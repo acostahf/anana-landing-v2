@@ -30,22 +30,22 @@ const Footer = () => {
         ],
         socials: [
             {
-                href: "https://instagram.com",
+                href: "https://www.instagram.com/cookwithanana/",
                 label: "Instagram",
                 icon: <InstaGram />,
             },
             {
-                href: "https://tiktok.com",
+                href: "https://www.tiktok.com/@cookwithanana?_t=ZT-8ss5hi2n6Vu&_r=1",
                 label: "TikTok",
                 icon: <TikTok />,
             },
             {
-                href: "https://youtube.com",
+                href: "https://www.youtube.com/@cookwithanana",
                 label: "YouTube",
                 icon: <Youtube />,
             },
             {
-                href: "https://linkedin.com",
+                href: "https://www.linkedin.com/company/cook-with-anana/?viewAsMember=true",
                 label: "LinkedIn",
                 icon: <Linkedin />,
             },
@@ -115,7 +115,12 @@ const Footer = () => {
                                                 // href={link.href}
                                                 // passHref
                                             >
-                                                <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
+                                                <a
+                                                    href={link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2 hover:text-[#1765fc] cursor-pointer"
+                                                >
                                                     {link.icon &&
                                                         link.icon}
                                                     {link.label}
@@ -160,7 +165,12 @@ const Footer = () => {
                                         // href={link.href}
                                         // passHref
                                     >
-                                        <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
+                                        <a
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2"
+                                        >
                                             {link.icon && link.icon}
                                         </a>
                                     </div>
