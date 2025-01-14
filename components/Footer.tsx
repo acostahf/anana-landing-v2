@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FooterLogo, Hand } from "./svgs/logos";
+import { Hand } from "./svgs/logos";
 import { JSX } from "react";
 import { InstaGram, Linkedin, TikTok, Youtube } from "./svgs/Icons";
 
@@ -59,7 +59,7 @@ const Footer = () => {
                 <div className="flex flex-col pb-10 md:pb-0">
                     <div className="w-[218px] h-[68px]">
                         <Hand />
-                        <p className="font-lora text-lg text-[#1765fc] -mt-2 ml-12">
+                        <p className="font-lora text-lg text-blue -mt-2 ml-12">
                             Recipes for{" "}
                             <em className="font-semibold">Life.</em>
                         </p>
@@ -85,7 +85,12 @@ const Footer = () => {
                                                 // href={link.href}
                                                 // passHref
                                             >
-                                                <a className="font-avenir text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
+                                                <a
+                                                    href={link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="font-avenir text-sm lg:text-base text-[#1d1128] flex items-center gap-2 cursor-pointer hover:text-blue"
+                                                >
                                                     {link.icon &&
                                                         link.icon}
                                                     {link.label}
@@ -115,12 +120,7 @@ const Footer = () => {
                                                 // href={link.href}
                                                 // passHref
                                             >
-                                                <a
-                                                    href={link.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2 hover:text-[#1765fc] cursor-pointer"
-                                                >
+                                                <a className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2">
                                                     {link.icon &&
                                                         link.icon}
                                                     {link.label}
@@ -147,7 +147,7 @@ const Footer = () => {
                                     Submit a nonna
                                 </p>
                             </div>
-                            <button className="bg-[#1765fc] hover:bg-[#1451c7]/75 text-white rounded-xl py-1.5 px-4 text-xs md:text-sm font-sans">
+                            <button className="bg-blue hover:bg-[#1451c7]/75 text-white rounded-xl py-1.5 px-4 text-xs md:text-sm font-sans">
                                 Apply now!
                             </button>
                         </div>
@@ -169,7 +169,7 @@ const Footer = () => {
                                             href={link.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2"
+                                            className="text-sm lg:text-base text-[#1d1128] flex items-center gap-2 cursor-pointer hover:text-blue"
                                         >
                                             {link.icon && link.icon}
                                         </a>
@@ -203,9 +203,9 @@ const Footer = () => {
                 <p className="font-avenir">
                     Copyright &copy; 2024 Anana, All Rights Reserved |{" "}
                     {/* <Link href="/terms"> */}
-                    <a className="text-[#1765fc]">Terms and Conditions</a>
+                    <a className="text-blue">Terms and Conditions</a>
                     {/* </Link>{" "} */}| {/* <Link href="/privacy"> */}
-                    <a className="text-[#1765fc]">Privacy Policy</a>
+                    <a className="text-blue">Privacy Policy</a>
                     {/* </Link> */}
                 </p>
             </div>
