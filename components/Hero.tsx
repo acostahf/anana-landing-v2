@@ -59,7 +59,7 @@ const Hero = () => {
                 <div className="flex flex-col justify-start items-center relative gap-2 md:gap-4 w-full">
                     <ButtonLead />
                     <p className="font-lora self-stretch w-full md:max-w-[891px] text-sm md:text-base text-center text-white">
-                        Launching March, 2025
+                        Launching April 6th, 2025
                     </p>
                 </div>
             </div>
